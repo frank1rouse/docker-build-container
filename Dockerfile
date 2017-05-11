@@ -7,6 +7,10 @@
 # NOTE: The build team would use the image without the compose file
 #       to ensure the maven packages are *not* cached between runs
 #
+# To build the container, run the following docker command
+#
+#   docker build -t symphony-build-server:latest .
+#
 # To use this container to build Symphony, start the container with the 
 # following CLI options
 #
@@ -48,7 +52,12 @@ RUN apk update && \
             zip unzip \
             docker docker-bash-completion openrc \
             bash bash-completion \
+            make py-pip \
             && \
+
+# Install sphinx-build used to build documentation project
+pip install -U sphinx && \
+pip install sphinx_bootstrap_theme && \
 
 #
 # LEGAL: Process to run Alpine with openrc in a container pulled from
