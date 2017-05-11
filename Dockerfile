@@ -14,7 +14,7 @@
 # To use this container to build Symphony, start the container with the 
 # following CLI options
 #
-#   docker run -d --privileged --name symphony-dev -v `pwd`:/build symphony-build-server
+#   docker run -d --privileged --name symphony-dev -v `pwd`:/build -v `pwd`/cache:/root/.m2  symphony-build-server
 #
 # This will run the container in the background. This is done
 # so that the init process will run which can be used to spawn
