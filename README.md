@@ -4,7 +4,9 @@ Creates a docker image containing all the tools needed to build Project Symphony
 # Build Container
 You can build the container locally through docker with the following command.
 
+```
   docker build -t symphony-build-server:latest .
+```
 
 # Run Container
 The build container is best run in the background and left running as long as you need to build the code.
@@ -21,12 +23,16 @@ optional and creates a long term cache of maven repository files. This is done t
 on subsequent runs of the container. Without the option, each time the container is used to build a 
 Java project with Maven, the maven dependencies will be retrieved again.
 
+```
   docker run -d --privileged --name symphony-dev -v `pwd`:/build -v `pwd`/cache:/root/.m2  symphony-build-server
+```
 
 # Attach to Container
 To attach to the running docker container, execute the following docker command.
 
+```
   docker exec -it symphony-dev sh
+```
 
 This will execute the command 'sh' and ensures an interactive terminal.
 
@@ -34,13 +40,17 @@ This will execute the command 'sh' and ensures an interactive terminal.
 After attaching to the build container, you will (currently) need to start up the docker daemon manually. 
 This can be done by executing the command.
 
+```
   /etc/init.d/docker start
+```
 
 # Build Project Symphony repository
 To build any of the checked out repositories, change to the /build directory and then pick a project under it.
 Most projects can be built using maven.
 
+```
   cd /build
   ls
   cd <project>
   mvn clean install
+```
