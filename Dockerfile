@@ -74,7 +74,8 @@ RUN apk update && \
 # can't do cgroups
     sed -i 's/cgroup_add_service /# cgroup_add_service /g' /lib/rc/sh/openrc-run.sh && \
 # clean apk cache
-    rm -rf /var/cache/apk/*
+    rm -rf /var/cache/apk/* && \
+    rc-update add docker 
 
-# Run the init daemon process so that we can start the docker daemon later
+# Run the init daemon process (PID 1) so that we can start the docker daemon later
 ENTRYPOINT ["/sbin/init"]
