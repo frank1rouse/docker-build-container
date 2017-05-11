@@ -36,14 +36,6 @@ To attach to the running docker container, execute the following docker command.
 
 This will execute the command 'sh' and ensures an interactive terminal.
 
-# Start docker daemon
-After attaching to the build container, you will (currently) need to start up the docker daemon manually. 
-This can be done by executing the command.
-
-```
-  /etc/init.d/docker start
-```
-
 # Build Project Symphony repository
 To build any of the checked out repositories, change to the /build directory and then pick a project under it.
 Most projects can be built using maven.

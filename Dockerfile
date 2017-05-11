@@ -25,10 +25,6 @@
 #
 #   docker exec -it symphony-dev sh
 #
-# Once logged in, run the docker daemon with
-#
-#   /etc/init.d/docker start
-#
 # Now you can build the symphony code.
 #
 #   cd /build
