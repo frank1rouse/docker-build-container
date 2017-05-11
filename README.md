@@ -1,5 +1,6 @@
 # symphony-build-server
-Creates a docker image containing all the tools needed to build Project Symphony from source repositories.
+Creates a docker image containing all the tools needed to build 
+[Project Symphony](https://github.com/dellemc-symphony) from source repositories.
 
 # Prerequisites
 To build the symphony-build-server docker image, you must have 
