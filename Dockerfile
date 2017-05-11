@@ -55,10 +55,6 @@ RUN apk update && \
             make py-pip \
             && \
 
-# Install sphinx-build used to build documentation project
-pip install -U sphinx && \
-pip install sphinx_bootstrap_theme && \
-
 #
 # LEGAL: Process to run Alpine with openrc in a container pulled from
 # https://github.com/neeravkumar/dockerfiles/blob/master/alpine-openrc/Dockerfile
