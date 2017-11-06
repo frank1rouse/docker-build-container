@@ -49,6 +49,7 @@ RUN apk update && \
             docker docker-bash-completion openrc \
             bash bash-completion \
             make py-pip \
+            vim \
             && \
 
     #
