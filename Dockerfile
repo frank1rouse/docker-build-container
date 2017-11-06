@@ -53,6 +53,12 @@ RUN apk update && \
             && \
 
     #
+    # Add some standard configuration to vimrc
+    echo 'colorscheme murphy' >> /root/.vimrc && \
+    echo 'set sw=4' >> /root/.vimrc && \
+    echo 'set ts=4' >> /root/.vimrc && \
+    echo 'set et' >> /root/.vimrc && \
+    
     # LEGAL: Process to run Alpine with openrc in a container pulled from
     # https://github.com/neeravkumar/dockerfiles/blob/master/alpine-openrc/Dockerfile
     #
