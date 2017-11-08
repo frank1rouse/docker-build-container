@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+        name = Frank Rouse
+        email = frank.rouse@dell.com
+
+[url "https://github.com"]
+        insteadOf = git://github.com
+[http]
+        sslCAInfo = /ssh/EMC_CA_GIT_HUB_Combo.pem
+[core]
+        editor = vim
