@@ -11,7 +11,7 @@ To build the symphony-build-server docker image, you must have
 You can build the container locally through docker with the following command.
 
 ```
-  docker build -t symphony-build-server:latest .
+  docker build -t windows-build-server:latest .
 ```
 
 ## Run Container
@@ -19,7 +19,7 @@ The build container is best run in the background and left running as long as yo
 The *--privileged* option is used to allow running the docker daemon within the container. The internal
 docker daemon is utilized to build docker images from some of the Project Symphony repositories.
 
-The container is given a fixed name, **symphony-dev**. This is optional and does not have to be done. By
+The container is given a fixed name, **dev**. This is optional and does not have to be done. By
 naming the running container, we can prevent multiple copies from running by accident.
 
 There are two mount mounts from the local file system into the container. The first mount option (*-v*)
@@ -30,14 +30,21 @@ on subsequent runs of the container. Without the option, each time the container
 Java project with Maven, the maven dependencies will be retrieved again.
 
 ```
-  docker run -d --privileged --name symphony-dev -v `pwd`:/build -v `pwd`/cache:/root/.m2  symphony-build-server
+docker run -d --privileged --name dev \
+        -v "/C/repos:/mnt/repos" \
+        -v "/C/Users/rousef/.ssh:/ssh" \
+        -v "/C/workspaces:/mnt/workspaces" \
+        -v "/C/Users/rousef/Documents:/mnt/documents" \
+        -v "/C/Users/rousef/Downloads:/mnt/downloads" \
+        -v "/C/Users/rousef/myscripts:/root/myscripts" \
+        windows-build-container
 ```
 
 ## Attach to Container
 To attach to the running docker container, execute the following docker command.
 
 ```
-  docker exec -it symphony-dev sh
+  docker exec -it dev sh
 ```
 
 This will execute the command 'sh' and ensures an interactive terminal.
