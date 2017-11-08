@@ -40,6 +40,7 @@ FROM openjdk:8-jdk-alpine
 
 #
 # Add additional build tools that are needed
+
 RUN apk update && \
     apk add maven \
             go go-tools \
@@ -87,7 +88,13 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
 
     # add docker to the startup sequence so it is running when the container starts
-    rc-update add docker 
+    rc-update add docker
+    
+# Add a copy of git config
+COPY .gitconfig /root/
+
+# Add the myscript directory to the path
+ENV PATH "$PATH:/root/myscripts"
 
 # Run the init daemon process (PID 1) so that we can start the docker daemon later
 ENTRYPOINT ["/sbin/init"]
