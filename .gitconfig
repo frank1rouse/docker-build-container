@@ -9,3 +9,6 @@
         sslCAInfo = /ssh/EMC_CA_GIT_HUB_Combo.pem
 [core]
         editor = vim
+# Store credentials in the image once entered
+[credential]
+    helper = store
