@@ -87,8 +87,14 @@ RUN apk update && \
     # clean apk cache
     rm -rf /var/cache/apk/* && \
 
+    # add to the python environment
+    pip install github3.py
+    pip install chainmap
+    
     # add docker to the startup sequence so it is running when the container starts
-    rc-update add docker
+    rc-update add docke    
+
+
     
 # Add a copy of git config
 COPY .gitconfig /root/
