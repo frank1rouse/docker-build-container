@@ -32,7 +32,7 @@ Java project with Maven, the maven dependencies will be retrieved again.
 ```
 docker run -d --privileged --name dev \
         -v "/C/repos:/mnt/repos" \
-        -v "/C/Users/rousef/.ssh:/ssh" \
+        -v "/C/Users/rousef/.ssh:/opt/security" \
         -v "/C/workspaces:/mnt/workspaces" \
         -v "/C/Users/rousef/Documents:/mnt/documents" \
         -v "/C/Users/rousef/Downloads:/mnt/downloads" \
