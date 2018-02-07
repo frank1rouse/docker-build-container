@@ -51,6 +51,7 @@ RUN apk update && \
             bash bash-completion \
             make py-pip \
             vim \
+            curl \
             && \
 
     #
