@@ -19,7 +19,7 @@ The build container is best run in the background and left running as long as yo
 The *--privileged* option is used to allow running the docker daemon within the container. The internal
 docker daemon is utilized to build docker images from some of the Project Symphony repositories.
 
-The container is given a fixed name, **dev**. This is optional and does not have to be done. By
+The container is given a fixed name, **windows-build-server**. This is optional and does not have to be done. By
 naming the running container, we can prevent multiple copies from running by accident.
 
 There are two mount mounts from the local file system into the container. The first mount option (*-v*)
